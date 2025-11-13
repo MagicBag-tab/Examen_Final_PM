@@ -2,9 +2,11 @@ package com.example.uvgestradasarah.network.assetDto
 
 import kotlinx.serialization.Serializable
 
+@Serializable
 data class AssetResponse(
     val data: List<AssetDto>
 )
+
 @Serializable
 data class AssetDto(
     val id: String,

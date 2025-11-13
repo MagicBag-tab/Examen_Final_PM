@@ -82,4 +82,6 @@ android {
 dependencies {
     implementation(libs.androidx.benchmark.traceprocessor)
     implementation(libs.androidx.ui)
+    implementation(libs.androidx.datastore.core)
+    implementation(libs.androidx.datastore.preferences.core)
 }
