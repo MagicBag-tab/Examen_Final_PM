@@ -7,7 +7,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.uvgestradasarah.Assets
-import com.example.uvgestradasarah.database.AssetDatabase
+import com.example.uvgestradasarah.datastore.AssetDatabase
 import com.example.uvgestradasarah.datastore.entity.toEntity
 import com.example.uvgestradasarah.network.HttpClientFactory
 import com.example.uvgestradasarah.network.api.AssetsApi

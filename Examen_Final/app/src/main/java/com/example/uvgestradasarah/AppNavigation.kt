@@ -5,6 +5,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import com.example.uvgestradasarah.navigation.Assets
+import com.example.uvgestradasarah.navigation.Profile
 import com.example.uvgestradasarah.screens.AssetsScreen
 import com.example.uvgestradasarah.screens.ProfileScreen
 
@@ -14,24 +17,27 @@ fun AppNavigation(modifier: Modifier = Modifier){
 
     NavHost(
         navController = navController,
-        startDestination = AssetsScreen().toString(),
-        modifier = Modifier
+        startDestination = Assets,
+        modifier = modifier
     ){
-        composable<AssetsScreen>(
-            onAssetClick = { asset ->
-                navController.navigate(
-                    ProfileScreen(id = asset.id)
-                )
-            }
-        )
+        composable<Assets> {
+            AssetsScreen(
+                onAssetClick = { asset ->
+                    navController.navigate(
+                        Profile(id = asset.id)
+                    )
+                }
+            )
+        }
 
-        composable<ProfileScreen>( backStackEntry ->
-            val profile = backStackEntry.toRoute<ProfileScreen>()
+        composable<Profile> { backStackEntry ->
+            val profile = backStackEntry.toRoute<Profile>()
             ProfileScreen(
-                profile = profile,
+                id = profile.id,
                 onBack = {
                     navController.popBackStack()
                 }
             )
+        }
     }
 }

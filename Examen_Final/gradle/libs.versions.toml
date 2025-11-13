@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.0"
+agp = "8.13.1"
 kotlin = "2.2.21"
 coreKtx = "1.17.0"
 junit = "4.13.2"
@@ -7,26 +7,25 @@ junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.9.4"
 activityCompose = "1.11.0"
-composeBom = "2025.10.01"
+composeBom = "2025.11.00"
 androidGradlePlugin = "8.2.2"
-kotlinxSerialization = "1.6.3"
+kotlinxSerialization = "1.9.0"
 room = "2.6.1"
 ksp = "2.2.20-2.0.4"
 androidxCore = "1.12.0"
-androidxLifecycle = "2.7.0"
+androidxLifecycle = "2.9.4"
 androidxActivity = "1.8.2"
 androidxComposeBom = "2024.02.02"
-androidxNavigation = "2.7.7"
-androidxRoom = "2.6.1"
-coil = "2.6.0"
-ktor = "2.3.9"
+androidxNavigation = "2.9.6"
+androidxRoom = "2.8.3"
+coil = "2.7.0"
+ktor = "3.3.2"
 kotlinxCoroutines = "1.8.0"
 androidxTestJunit = "1.1.5"
 androidxEspresso = "3.5.1"
 benchmarkTraceprocessor = "1.4.1"
 ui = "1.9.4"
-datastoreCore = "1.1.7"
-datastorePreferencesCore = "1.1.7"
+datastore = "1.1.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -62,10 +61,10 @@ ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidxRoom" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidxRoom" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidxRoom" }
-androidx-benchmark-traceprocessor = { group = "androidx.benchmark", name = "benchmark-traceprocessor", version.ref = "benchmarkTraceprocessor" }
-androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
-androidx-datastore-core = { group = "androidx.datastore", name = "datastore-core", version.ref = "datastoreCore" }
-androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastorePreferencesCore" }
+
+# DataStore - CORREGIDO
+androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+androidx-datastore-core = { group = "androidx.datastore", name = "datastore-core", version.ref = "datastore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -75,7 +74,6 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 [bundles]
-# Un "bundle" agrupa varias librerías para añadirlas con una sola línea
 ktor = [
     "ktor-client-core",
     "ktor-client-cio",
@@ -83,4 +81,3 @@ ktor = [
     "ktor-client-logging",
     "ktor-serialization-kotlinx-json"
 ]
-

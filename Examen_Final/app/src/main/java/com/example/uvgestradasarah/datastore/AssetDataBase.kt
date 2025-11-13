@@ -1,4 +1,4 @@
-package com.example.uvgestradasarah.database
+package com.example.uvgestradasarah.datastore
 
 import android.content.Context
 import androidx.room.Database
